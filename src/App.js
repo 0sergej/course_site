@@ -3,7 +3,7 @@ import Counter from './Components/Counter'
 
 function App() {
   return (
-    <Counter />
+    <Counter initailCount={0} />
   )
 }
 
