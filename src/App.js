@@ -1,11 +1,9 @@
 import React from 'react'
+import Counter from './Components/Counter'
 
 function App() {
-  return (<div>
-    <button className="btn">-</button>
-    <span>0</span>
-    <button>+</button>
-  </div> 
+  return (
+    <Counter />
   )
 }
 
