@@ -1,1 +1,7 @@
-@import 'recipe-list.css';
+@import-normalize;
+@import 'Font.css';
+@import 'Recipe-list.css';
+
+*, *::before, *::after {
+    font-family:'Courier New', Courier, monospace;
+}
