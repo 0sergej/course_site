@@ -13,13 +13,13 @@ export default function Recipe(props)
     return (
         <div>
             <div>
-                <h3>{name}
+                <h3 className="font-bold text-xl">{name}
                 </h3>
                 <div>
-                    <button>
+                    <button className="btn btn-primary p-1">
                         Edit
                     </button>
-                    <button>
+                    <button className=" btn btn-secondary">
                         Delete
                     </button>
 
