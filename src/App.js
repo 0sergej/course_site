@@ -19,13 +19,13 @@ const sampleRecipes = [
     ingredients: [
       {
         id: 1,
-        name: 'Chicken',
-        amount: '2 pounds'
+        name: ' Chicken',
+        amount: ' 2 pounds'
       },
       {
         id: 2,
-        name: 'Salt',
-        amount: '1 Tbs'
+        name: ' Salt',
+        amount: ' 1 Tbs'
       }
     ]
   },
@@ -38,13 +38,13 @@ const sampleRecipes = [
     ingredients: [
       {
         id: 1,
-        name: 'Pork',
-        amount: '3 pounds'
+        name: ' Pork',
+        amount: ' 3 pounds'
       },
       {
         id: 2,
-        name: 'Paprika',
-        amount: '2 Tbs'
+        name: ' Paprika',
+        amount: ' 2 Tbs'
       }
     ]
   }
