@@ -4,7 +4,7 @@ import Recipe from './Recipe'
 export default function RecipeList({ recipes })
 {
     return (
-        <div className="border-r-2 border-black border-solid min-h-full w-1/2">
+        <div className="border-r-2 border-black border-solid min-h-screen w-1/2">
         <div>
             {
                 recipes.map(recipes =>
