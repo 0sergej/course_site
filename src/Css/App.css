@@ -8,7 +8,7 @@
     }
 
     .btn-primary{
-        @apply bg-blue-light hover:bg-blue-dark text-white
+        @apply bg-blue-light hover:bg-blue-dark text-colors-white
     }
 
     .btn-secondary{

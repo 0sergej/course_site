@@ -19,6 +19,6 @@ export default function RecipeList({ recipes })
             <div className=" text-center py-8">
                 <button className="btn btn-primary">Add Recipes</button>
             </div>
-        </div>
+            </div>
     )
 }
