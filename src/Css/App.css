@@ -12,7 +12,7 @@
     }
 
     .btn-secondary{
-        @apply bg-red-light hover:bg-red-dark text-white p-1
+        @apply bg-red-light hover:bg-red-dark text-colors-white p-1
     }
 };
 
