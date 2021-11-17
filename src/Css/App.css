@@ -4,7 +4,7 @@
 
 @layer components{
     .btn{
-        @apply font-bold border-0 rounded p-2
+        @apply font-black border-0 rounded p-2 m-1
     }
 
     .btn-primary{
@@ -12,7 +12,7 @@
     }
 
     .btn-secondary{
-        @apply bg-red-light hover:bg-red-dark text-colors-white p-1
+        @apply bg-red-light hover:bg-red-dark text-colors-white
     }
 };
 

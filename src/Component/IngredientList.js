@@ -11,7 +11,7 @@ export default function IngredientList({ingredients}) {
         )
     }) 
     return (
-        <div>
+        <div className="grid grid-cols-2 justify-start gap-x-4 gap-y-1 ">
             {ingredientElements}
         </div>
     )
