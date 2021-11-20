@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react'
 import RecipeList from './Component/RecipeList'
 import RecipeEdit from './Component/RecipeEdit'
 import './Css/App.css'
-import { v4 as uuidv4 } from 'uuid';
-import { findByDisplayValue } from '@testing-library/dom';
+import { v4 as uuidv4 } from 'uuid'
 
 export const RecipeContext = React.createContext()
 const LOCAL_STORAGE_KEY = 'ReactCourse.recipes'
@@ -43,15 +42,16 @@ function App()
   function handleRecipeAdd() {
     const newRecipe = {
       id: uuidv4(),
-      name: 'New',
+      name: '',
       servings: 1,
-      cookTime: '1:00',
-      instructions: 'Instr.',
+      cookTime: '',
+      instructions: '',
       ingredients: [
-        { id: uuidv4(), name: 'Name', amount: '1 Tbs' }
+        { id: uuidv4(), name: '', amount: '' }
       ]
     }
-  
+    
+    setSelectedRecipesId(newRecipe.id)
     setRecipes([...recipes, newRecipe])
   }
   
@@ -63,7 +63,12 @@ function App()
     setRecipes(newRecipes)
   }
 
-  function handleRecipeDelete(id) {
+  function handleRecipeDelete(id)
+  {
+    if (selectedRecipesId != null && selectedRecipesId === id)
+    {
+      setSelectedRecipesId(undefined)
+      }
     setRecipes(recipes.filter(recipe => recipe.id !== id))
   }
 

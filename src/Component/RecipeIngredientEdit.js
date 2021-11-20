@@ -4,7 +4,8 @@ export default function RecipeIngredientEdit(props)
 {
     const {
         ingredient,
-        handleIngredientChange
+        handleIngredientChange,
+        handleIngredientDelete
     } = props
 
     function handleChange(changes)
@@ -26,7 +27,11 @@ export default function RecipeIngredientEdit(props)
                 onInput={(e) =>handleChange({ amount :e.target.value })}
                 value={ingredient.amount}
             />
-            <button className="btn btn-secondary">&times;</button>
+            <button
+                className="btn btn-secondary"
+            onClick={() => handleIngredientDelete(ingredient.id)}>
+                &times;
+            </button>
         </>
     )
 }
