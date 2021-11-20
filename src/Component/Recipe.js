@@ -4,7 +4,7 @@ import {RecipeContext} from '../App'
 
 export default function Recipe(props)
 {
-    const { handleRecipeDelete } = useContext(RecipeContext)
+    const { handleRecipeDelete, handleRecipeSelect } = useContext(RecipeContext)
     const {
         id,
         name,
@@ -20,7 +20,10 @@ export default function Recipe(props)
                 <h3 className="mt-0 text-3xl">{name}
                 </h3>
                 <div>
-                    <button className="btn btn-primary">
+                    <button
+                        className="btn btn-primary"
+                        onClick={() => handleRecipeSelect(id)}
+                    >
                         Edit
                     </button>
                     <button

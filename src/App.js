@@ -3,6 +3,7 @@ import RecipeList from './Component/RecipeList'
 import RecipeEdit from './Component/RecipeEdit'
 import './Css/App.css'
 import { v4 as uuidv4 } from 'uuid';
+import { findByDisplayValue } from '@testing-library/dom';
 
 export const RecipeContext = React.createContext()
 const LOCAL_STORAGE_KEY = 'ReactCourse.recipes'
@@ -10,10 +11,20 @@ const LOCAL_STORAGE_KEY = 'ReactCourse.recipes'
 function App()
 {
   const [recipes, setRecipes] = useState(sampleRecipes)
+  const [selectedRecipesId, setSelectedRecipesId] = useState()
+  const selectedRecipes = recipes.find(recipe => recipe.id === selectedRecipesId)
+  
 
   const recipeContextValue = {
     handleRecipeAdd,
-    handleRecipeDelete
+    handleRecipeDelete,
+    handleRecipeSelect,
+    handleRecipeChange
+  }
+
+  function handleRecipeSelect(id)
+  {
+    setSelectedRecipesId(id)
   }
 
 
@@ -43,6 +54,14 @@ function App()
   
     setRecipes([...recipes, newRecipe])
   }
+  
+  function handleRecipeChange(id, recipe)
+  {
+    const newRecipes = [...recipes]
+    const index = newRecipes.findIndex(r => r.id === id)
+    newRecipes[index] = recipe
+    setRecipes(newRecipes)
+  }
 
   function handleRecipeDelete(id) {
     setRecipes(recipes.filter(recipe => recipe.id !== id))
@@ -51,7 +70,8 @@ function App()
   return (
     <RecipeContext.Provider value={recipeContextValue}>
       <RecipeList recipes={recipes} />
-      <RecipeEdit />
+      {selectedRecipes && 
+      <RecipeEdit recipe={selectedRecipes}/>}
     </RecipeContext.Provider>
   )
 }
